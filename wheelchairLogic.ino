@@ -22,12 +22,12 @@ void getLdistaance()
 
 void getRdistance()
 {
-    
+
 }
 
 void getAlldis()
 {
-
+    
 }
 void setup()
 {
