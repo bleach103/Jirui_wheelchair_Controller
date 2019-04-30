@@ -25,7 +25,7 @@ class Wheelchair
             FORWARD,STOP,LEFT,RIGHT
         };
         static enum STATUS{
-            READY,RUNNING,BLOCKED
+            READY,RUNNING,BLOCKED,MANUAL
         };
         Wheelchair();
         Wheelchair(int A_ChenalAddr,int B_ChenalAddr);

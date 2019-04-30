@@ -28,14 +28,21 @@ Wheelchair::Wheelchair(int A_ChenalAddr,int B_ChenalAddr)
 {
     this->A_ChenalAddr = A_ChenalAddr;
     this->B_ChenalAddr = B_ChenalAddr;
-    manualFlag   = false;
-    currentStatu = Wheelchair::STATUS::READY;
+    manualFlag         = false;
+    currentStatu       = Wheelchair::STATUS::READY;
     initController();
 }
 
 void Wheelchair::setManual(bool manualFlag)
 {
-    this->manualFlag = manualFlag;
+    this->manualFlag = manualFlag
+    if(manualFlag)
+        setCurrent(Wheelchair::STATUS::MANUAL);
+    else
+    {
+        brake();
+        setCurrent(Wheelchair::STATUS::READY);
+    }
 }
 
 bool Wheelchair::isManual()
