@@ -12,7 +12,7 @@ float distance[4] = {0,0,0,0};
 
 void getFrontdistance()
 {
-
+    
 }
 
 void getLdistaance()
@@ -27,13 +27,21 @@ void getRdistance()
 
 void getAlldis()
 {
-    
+
 }
 void setup()
 {
     Serial.begin(9600);
+
+//  超声波传感器引脚初始化
+    pinMode(LSR_ECHO, INPUT);
+    pinMode(RSR_ECHO, INPUT);
+    pinMode(LSR_TRIG, OUTPUT);
+    pinMode(RSR_TRIG, OUTPUT);
+
     delay(2000);
     Serial.println("*cmd-init-1-end*"); 
+
 }
 
 void loop()
