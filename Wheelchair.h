@@ -10,8 +10,8 @@
 class Wheelchair
 {
     private:
-        unsigned A_ChenalAddr;      //A_Chenal DAC control y-row of wheelchair forward and fallback  
-        unsigned B_ChenalAddr;      //B_Chenal DAC control x-row of wheelchair left and right
+        int A_ChenalAddr;      //A_Chenal DAC control y-row of wheelchair forward and fallback  
+        int B_ChenalAddr;      //B_Chenal DAC control x-row of wheelchair left and right
         bool     manualFlag;
         int      currentStatu;
         
@@ -19,12 +19,11 @@ class Wheelchair
         bool goForward();
         bool goLeft();
         bool goRight();
-        void brake();
     public:
-        static enum ACTION{
+        enum ACTION{
             FORWARD,BRAKE,LEFT,RIGHT
         };
-        static enum STATUS{
+        enum STATUS{
             READY,RUNNING,BLOCKED,REBLOCKED,MANUAL
         };
         Wheelchair();
@@ -36,4 +35,6 @@ class Wheelchair
         int  getCurrent();
         int  setCurrent(int statu); 
         String doAction(int action);
+        void brake();
+
 };

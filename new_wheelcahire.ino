@@ -123,7 +123,7 @@ void getRdistance()
 
 void getAlldis()
 {
-    getDistanceFront();
+    getFrontdistance();
     getLdistance();
     getRdistance();
 }
@@ -202,7 +202,7 @@ void loop()
         if(cmdData[0]=='*')
         {
             strToken(cmdData.c_str(),"-");
-            if(String(command_buffer[1])=="keep"))
+            if(String(command_buffer[1])=="keep")
             {
                 linkFlag = true;
                 Serial.println("OK!");
@@ -216,7 +216,7 @@ void loop()
                 }
                 else if(String(command_buffer[2])=="1")
                 {
-                    Car.setManual(true);
+                    car.setManual(true);
                 }
                 Serial.println("OK!");
             }

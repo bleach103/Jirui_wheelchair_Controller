@@ -35,7 +35,7 @@ Wheelchair::Wheelchair(int A_ChenalAddr,int B_ChenalAddr)
 
 void Wheelchair::setManual(bool manualFlag)
 {
-    this->manualFlag = manualFlag
+    this->manualFlag = manualFlag;
     if(manualFlag)
         setCurrent(Wheelchair::STATUS::MANUAL);
     else
@@ -81,7 +81,7 @@ bool Wheelchair::goForward()
 
     Wire.beginTransmission(A_ChenalAddr);
     Wire.write(0x40);
-    Wire.write(SPEED);
+    Wire.write(FORWARD_SPEED);
     Wire.endTransmission();
 
     setCurrent(Wheelchair::STATUS::RUNNING);
