@@ -22,10 +22,10 @@ class Wheelchair
         void brake();
     public:
         static enum ACTION{
-            FORWARD,STOP,LEFT,RIGHT
+            FORWARD,BRAKE,LEFT,RIGHT
         };
         static enum STATUS{
-            READY,RUNNING,BLOCKED,MANUAL
+            READY,RUNNING,BLOCKED,REBLOCKED,MANUAL
         };
         Wheelchair();
         Wheelchair(int A_ChenalAddr,int B_ChenalAddr);
@@ -35,5 +35,5 @@ class Wheelchair
         bool isManual();
         int  getCurrent();
         int  setCurrent(int statu); 
-        bool doAction(int action);
+        String doAction(int action);
 };

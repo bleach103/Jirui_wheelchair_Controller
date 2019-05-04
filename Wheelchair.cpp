@@ -141,4 +141,51 @@ void Wheelchair::brake()
     setCurrent(Wheelchair::STATUS::READY);
 }
 
+String Wheelchair::doAction(int action)
+{
+    int status = getCurrent();
+    String ret = "";
+    bool doActFlag = false;
+    if(status == STATUS::MANUAL) return "DENY!";
+    if(status == STATUS::BLOCKED)
+    {
+        if(action == ACTION::FORWARD)
+        {
+            ret = "DENY!";
+        }
+        else
+        {
+            ret = "OK!";
+            doActFlag = true;
+        }
+    }
+    else
+    {
+        ret = "OK!";
+        doActFlag = true;
+    }
+    
+    if(doActFlag)
+    {
+        switch (action)
+        {
+            case ACTION::BRAKE:
+                brake();
+                break;
+            case ACTION::FORWARD:
+                goForward();
+                break;
+            case ACTION::LEFT:
+                goLeft();
+                break;
+            case ACTION::RIGHT:
+                goRight();
+                break;                
+            default:
+                ret = "ERROR!";
+                break;
+        }
+    }
 
+    return ret;
+}
